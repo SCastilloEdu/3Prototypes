@@ -168,8 +168,7 @@
 					"instanceVariables": {
 						"Autofire": true,
 						"Smash": false,
-						"JumpDebounce": false,
-						"Charges": 2
+						"JumpDebounce": false
 					},
 					"behaviors": {
 						"BoundToLayout": {
@@ -310,7 +309,9 @@
 					},
 					"uid": 25,
 					"instanceVariables": {
-						"Autofire": true
+						"Autofire": true,
+						"Smash": false,
+						"JumpDebounce": false
 					},
 					"behaviors": {
 						"BoundToLayout": {

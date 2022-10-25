@@ -9,6 +9,18 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 549529020545427
+		},
+		{
+			"name": "Smash",
+			"type": "boolean",
+			"desc": "",
+			"sid": 430298572915563
+		},
+		{
+			"name": "JumpDebounce",
+			"type": "boolean",
+			"desc": "",
+			"sid": 286739809981104
 		}
 	],
 	"behaviorTypes": [

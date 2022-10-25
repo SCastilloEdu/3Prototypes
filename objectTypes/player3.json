@@ -21,12 +21,6 @@
 			"type": "boolean",
 			"desc": "Makes sure the player doesn't immediately smash after jumping",
 			"sid": 241267730252680
-		},
-		{
-			"name": "Charges",
-			"type": "number",
-			"desc": "",
-			"sid": 132243018593200
 		}
 	],
 	"behaviorTypes": [
@@ -77,38 +71,6 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1
-					},
-					{
-						"width": 250,
-						"height": 250,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"imageSpriteId": 1093737,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.996,
-								0,
-								0.996,
-								0.5,
-								0.996,
-								0.996,
-								0.5,
-								0.996,
-								0,
-								0.996,
-								0,
-								0.5
-							]
-						},
-						"useCollisionPoly": true,
-						"duration": 1
 					}
 				],
 				"sid": 645960534442089,
@@ -117,7 +79,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 0
+				"speed": 5
 			}
 		],
 		"subfolders": []

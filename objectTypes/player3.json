@@ -1,0 +1,125 @@
+{
+	"name": "Player3",
+	"plugin-id": "Sprite",
+	"sid": 906139293496158,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Autofire",
+			"type": "boolean",
+			"desc": "",
+			"sid": 375911207219949
+		},
+		{
+			"name": "Smash",
+			"type": "boolean",
+			"desc": "Used to detemine if the player is smashing",
+			"sid": 593135717400378
+		},
+		{
+			"name": "JumpDebounce",
+			"type": "boolean",
+			"desc": "Makes sure the player doesn't immediately smash after jumping",
+			"sid": 241267730252680
+		},
+		{
+			"name": "Charges",
+			"type": "number",
+			"desc": "",
+			"sid": 132243018593200
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 401773217422330
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 558753644976418
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 861319,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.996,
+								0,
+								0.996,
+								0.5,
+								0.996,
+								0.996,
+								0.5,
+								0.996,
+								0,
+								0.996,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1093737,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.996,
+								0,
+								0.996,
+								0.5,
+								0.996,
+								0.996,
+								0.5,
+								0.996,
+								0,
+								0.996,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 645960534442089,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

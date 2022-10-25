@@ -1,0 +1,75 @@
+{
+	"name": "Player5",
+	"plugin-id": "Sprite",
+	"sid": 431290225745814,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Autofire",
+			"type": "boolean",
+			"desc": "",
+			"sid": 549529020545427
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 554204911962174
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 754483025619497
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 632315,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.996,
+								0,
+								0.996,
+								0.5,
+								0.996,
+								0.996,
+								0.5,
+								0.996,
+								0,
+								0.996,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 681526027480757,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

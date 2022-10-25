@@ -1,0 +1,346 @@
+{
+	"name": "Prototype03_ES",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Do not delete"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Menu_Button",
+					"sid": 959437622804454
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 642716682481503,
+					"parameters": {
+						"layout": "MenuPrototype"
+					}
+				}
+			],
+			"sid": 464329866894596
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 914671882288440,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 546722525335940,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 503029579420724,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "steer-left"
+					}
+				}
+			],
+			"sid": 258424288579823,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 918841033484336,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 315674023467802,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 155316095734883,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "steer-right"
+					}
+				}
+			],
+			"sid": 481416738054672,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 220565379739296,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 614122933585880,
+					"parameters": {
+						"instance-variable": "Start",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 834479806359667
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player",
+					"sid": 572536356172871,
+					"parameters": {
+						"instance-variable": "Start"
+					}
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 609593076074218
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 437181111691171,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "accelerate"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 203670204526281,
+					"parameters": {
+						"object": "Trail",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 297421195954905
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Trail",
+					"sid": 406790184094900
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 625378066639816,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Trail",
+					"sid": 602484279509687,
+					"parameters": {
+						"instance-variable": "Collide",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 243919043707487
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 456752665619176,
+					"parameters": {
+						"object": "Wall"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 284833432865339,
+					"parameters": {
+						"audio-file": "Ow",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Player",
+					"sid": 575824296479618,
+					"behaviorType": "Car"
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Player",
+					"sid": 467471728751426,
+					"behaviorType": "Car",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 265488857230371,
+					"parameters": {
+						"instance-variable": "Start",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 680515371379017,
+					"parameters": {
+						"instance-variable": "Crashed",
+						"value": "true"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 911088660292134,
+					"parameters": {
+						"object": "Particles",
+						"layer": "2",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 171358395905778,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 678825715757208,
+					"parameters": {
+						"object": "Trail"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Trail",
+					"sid": 407009959374957,
+					"parameters": {
+						"instance-variable": "Collide"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 981822141510750,
+					"parameters": {
+						"audio-file": "Ow",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Player",
+					"sid": 551638038745275,
+					"behaviorType": "Car"
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "Player",
+					"sid": 527678079136048,
+					"behaviorType": "Car",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 993575189884326,
+					"parameters": {
+						"instance-variable": "Start",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Player",
+					"sid": 762195848041339,
+					"parameters": {
+						"instance-variable": "Crashed",
+						"value": "true"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player",
+					"sid": 594793948223036,
+					"parameters": {
+						"object": "Particles",
+						"layer": "2",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 114574226839215
+		}
+	],
+	"sid": 974727041872239
+}

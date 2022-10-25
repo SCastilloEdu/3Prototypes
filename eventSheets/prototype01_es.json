@@ -1,0 +1,367 @@
+{
+	"name": "Prototype01_ES",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Do not delete"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Menu_Button",
+					"sid": 924659407202461
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 168821516711458,
+					"parameters": {
+						"layout": "MenuPrototype"
+					}
+				}
+			],
+			"sid": 970608049604052
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 608462150482236,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player1",
+							"sid": 872127528616741,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 274133850978745,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 841829943207171,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player1",
+							"sid": 363838303282556,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 300057578802646,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 328482711911126,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player1",
+							"sid": 971972364218694,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 500773425882396,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 229111691281688,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player1",
+							"sid": 391709064326548,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 639864600668665,
+					"isOrBlock": true
+				}
+			],
+			"sid": 653621072098889
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Shooting",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 402622541121892,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player1",
+							"sid": 559885021418935,
+							"parameters": {
+								"instance-variable": "Autofire"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player1",
+							"sid": 934677710297140,
+							"parameters": {
+								"object": "Bullet1",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Bullet1",
+							"sid": 925873249778319,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player1",
+							"sid": 960415169202983,
+							"parameters": {
+								"instance-variable": "Autofire",
+								"value": "false"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 281193370039389,
+							"parameters": {
+								"seconds": "0.35"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player1",
+							"sid": 983109402749426,
+							"parameters": {
+								"instance-variable": "Autofire",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 926100624772947
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Bullet1",
+							"sid": 998941666853406
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet1",
+							"sid": 280845947083712
+						}
+					],
+					"sid": 625885751857172
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet1",
+							"sid": 233606145920110,
+							"parameters": {
+								"object": "Zed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Zed",
+							"sid": 489306612426204,
+							"behaviorType": "MoveTo"
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Zed",
+							"sid": 330901095875912,
+							"parameters": {
+								"instance-variable": "HP",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 558349349127722
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Zed",
+							"sid": 456943032156872,
+							"parameters": {
+								"instance-variable": "HP",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Zed",
+							"sid": 845563009889722,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Zed",
+							"sid": 786598496679297,
+							"parameters": {
+								"animation": "\"Shot\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "Zed",
+							"sid": 544404693283156,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 423363516135936
+				}
+			],
+			"sid": 274788219331854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 866530856230774
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "Zed",
+					"sid": 115877240370726,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "Player1.X",
+						"y": "Player1.Y",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 579865505734189
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 928359882393228,
+					"parameters": {
+						"interval-seconds": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Spawner",
+					"sid": 761163982272700,
+					"parameters": {
+						"object": "Zed",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 777544617017616
+		}
+	],
+	"sid": 843601103535796
+}

@@ -1,0 +1,50 @@
+{
+	"name": "Trail",
+	"plugin-id": "Sprite",
+	"sid": 709169777398025,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Collide",
+			"type": "boolean",
+			"desc": "",
+			"sid": 669234319923020
+		},
+		{
+			"name": "Lifetime",
+			"type": "number",
+			"desc": "Lifetime",
+			"sid": 778570799712811
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 231,
+						"height": 233,
+						"originX": 0.4805194805194805,
+						"originY": 0.5021459227467812,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7767578,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 226333542545171,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
